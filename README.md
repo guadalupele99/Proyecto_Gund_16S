@@ -31,3 +31,7 @@ Gund metabarcoding
 Scripts should be run in the order indicated by the number they start with.
 
 * 1_filter_otu_table_[16s] .R R script to clean the otu table by removing negative controls, changing to relative abundance, removing 0 presence OTUs and changing the data to presence/absence for each of the markers.
+
+* 2_filter_otu_table_soil.R R script to clean the otu table by filtering otu of bacteria that belong exclusively to soil, changing to relative abundance, eliminating otu not present and obtaining the binary soil table.
+
+* 3_filter_otu_table_soil_and_maize_type.R R script to filter otu table containing otu of soil and local maize and soil and hybrid maize. It changes the data to relative abundance and eliminates the otu not present. This filtering is used to analyze the otu according to the genotype of the corn (local or hybrid).
