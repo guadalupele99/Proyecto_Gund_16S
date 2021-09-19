@@ -2,6 +2,44 @@
 ### farmer_type
 ##
 
+### Filter Soil & Tzotzil
+
+binary_soil_tzotzil<- subset_samples(binary_table, source== "Soil" & farmer_type== "Tzotzil")
+binary_soil_tzotzil
+
+phyloseq.rel_soil_tzotzil<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Tzotzil")
+phyloseq.rel_soil_tzotzil
+
+### Remove OTUs no longer present 
+
+binary_soil_tzotzil <- prune_taxa(taxa_sums(binary_soil_tzotzil) > 0, binary_soil_tzotzil)
+binary_soil_tzotzil
+
+phyloseq.rel_soil_tzotzil <- prune_taxa(taxa_sums(phyloseq.rel_soil_tzotzil) > 0, phyloseq.rel_soil_tzotzil)
+phyloseq.rel_soil_tzotzil
+
+################################################################################################################################################
+################################################################################################################################################
+
+### Filter Soil & Mestizo
+
+binary_soil_mestizo<- subset_samples(binary_table, source== "Soil" & farmer_type== "Mestizo")
+binary_soil_mestizo
+
+phyloseq.rel_soil_mestizo<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Mestizo")
+phyloseq.rel_soil_mestizo
+
+# Remove OTUs no longer present 
+
+binary_soil_mestizo <- prune_taxa(taxa_sums(binary_soil_mestizo) > 0, binary_soil_mestizo)
+binary_soil_mestizo
+
+phyloseq.rel_soil_mestizo <- prune_taxa(taxa_sums(phyloseq.rel_soil_mestizo) > 0, phyloseq.rel_soil_mestizo)
+phyloseq.rel_soil_mestizo
+
+################################################################################################################################################
+################################################################################################################################################
+
 ### Filter Soil & Tzotzil & Landrace
 
 binary_soil_tzotzil_landrace<- subset_samples(binary_table, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Landrace")
