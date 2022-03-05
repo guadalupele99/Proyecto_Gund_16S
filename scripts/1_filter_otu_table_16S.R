@@ -7,7 +7,7 @@
 ### Load libraries
 ###
 
-ibrary(phyloseq)
+library(phyloseq)
 
 ###
 ### Load data
