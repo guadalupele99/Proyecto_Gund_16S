@@ -7,7 +7,7 @@ Influence of genotype and agricultural management on the interactions of bacteri
 
 Author: María Guadalupe León Jiménez
 
-This repository contains the necessary steps for cleaning the OTU table obtained from samples of bacterial communities associated with deep roots and rhizosphere soil in native and hybrid corn fields of the project "Seed systems and structuring of biodiversity in corn agroecosystems" of Dr. Alicia Mastretta.
+This repository contains the necessary steps for cleaning the OTU table obtained from samples of bacterial communities associated with deep roots and rhizosphere soil in landrace and hybrid maize fields of the project "Seed systems and structuring of biodiversity in corn agroecosystems" of Dr. Alicia Mastretta.
 
 It contains the scripts to analyze the OTU of bacterial communities associated with roots and soil in plots of landrace and hybrid maize under two types of agricultural management.
 
