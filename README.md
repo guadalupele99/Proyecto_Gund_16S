@@ -14,7 +14,9 @@ It contains the scripts to analyze the OTU of bacterial communities associated w
 ## Software versions used throughout this repository
 
 R version 4.0.5.
+
 Cytoscape version 3.9.0.
+
 CoNet version 1.1.1.beta
 
 ## Repository organization
