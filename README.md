@@ -1,4 +1,4 @@
-## Proyecto-Gund: Ocozocoautla de Espinosa, Chiapas_16S_deep roots and rhizopheric soil
+## Proyecto-Gund: Bacterial communities associated with landrace and hybrid maize soil under two types of agricultural management (Mestizo and Tzotzil farmers) in the municipality of Ocozocoautla de Espinosa, Chiapas.
 
 Metabarcoding. Bacterial communities associated with two genotypes and agricultural management.
 
