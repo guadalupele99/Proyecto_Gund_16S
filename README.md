@@ -9,8 +9,7 @@ Author: María Guadalupe León Jiménez
 
 This repository contains the necessary steps for the cleaning of data from marker 16S from the sampling of deep roots and rhizospheric soil from maize fields of local varieties of hybrid or local maize from the project "Seed systems and the structuring of biodiversity in maize agroecosystems" by Dra. Alicia Mastretta. In general, it includes the scripts used to exclusively obtain OTU from bacteria associated with roots and rhizospheric soil.
 
-Contains the scripts to analyze OTU of bacteria sampled in deep roots and rhizospheric soil from native and hybrid corn plots.
-
+It contains the scripts to analyze the OTU of bacterial communities associated with roots and soil in plots of landrace and hybrid maize under two types of agricultural management.
 
 ## Repository organization
 
