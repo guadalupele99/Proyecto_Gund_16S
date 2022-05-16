@@ -11,6 +11,12 @@ This repository contains the necessary steps for cleaning the OTU table obtained
 
 It contains the scripts to analyze the OTU of bacterial communities associated with roots and soil in plots of landrace and hybrid maize under two types of agricultural management.
 
+## Software versions used throughout this repository
+
+R version 4.0.5.
+Cytoscape version 3.9.0.
+CoNet version 1.1.1.beta
+
 ## Repository organization
 
 Gund metabarcoding
