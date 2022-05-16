@@ -1,34 +1,47 @@
-##
+#
+### Divide data for soil
+#
+
+#
 ### Soil
-##
+#
 
 ### Filter soil
+phyloseq_rel.abundance_soil<- subset_samples(phyloseq_rel.abundance, source== "Soil")
 
-binary_soil<- subset_samples(binary_table, source== "Soil")
-binary_soil
+### Remove OTUs no longer present 
+phyloseq_rel.abundance_soil <- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil) > 0, phyloseq_rel.abundance_soil)
 
-phyloseq.rel_soil<- subset_samples(phyloseq.rel, source== "Soil")
-phyloseq.rel_soil
-
-### Remove OTUs no longer present
-
-binary_soil <- prune_taxa(taxa_sums(binary_soil) > 0, binary_soil)
-binary_soil
-
-phyloseq.rel_soil <- prune_taxa(taxa_sums(phyloseq.rel_soil) > 0, phyloseq.rel_soil)
-phyloseq.rel_soil
-
-#############################################################################################################################################################
-#############################################################################################################################################################
-
+###
 ### Final tables for further analyses are:
+###
 
 ### Soil
 
-### summary
-phyloseq.rel
-binary_soil
+### Summary
+phyloseq_rel.abundance_soil
 
-### samples
-sample_data(binary_soil)
-table(sample_data(binary_soil)$maize_type)
+#############################################################################################################################################################
+
+#
+###  Relative abundance table with OTU of bacterial communities associated with soil
+#
+
+OTU0 = as(otu_table(phyloseq_rel.abundance_soil), "matrix")
+OTUdf = as.data.frame(OTU0)
+
+write.csv(OTU0, file = "relative_abundance_soil.csv")
+
+#
+### Relative abundance table with taxa of bacterial communities associated with soil
+#
+
+OTU01 = as(tax_table(phyloseq_rel.abundance_soil), "matrix")
+OTUdf = as.data.frame(OTU01)
+
+write.csv(OTU01, file = "tax_soil_landrace_FAM.csv")
+
+### Samples
+sample_data(phyloseq_rel.abundance_soil)
+table(sample_data(phyloseq_rel.abundance_soil)$maize_type)
+table(sample_data(phyloseq_rel.abundance_soil)$farmer_type)
