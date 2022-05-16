@@ -1,114 +1,122 @@
+#
+### Divide the data by soil and type of farmer
+#
+
+#
+### Soil and type of farmer
+#
+
+### Filter soil and type of farmer Tzotzil
+phyloseq_rel.abundance_soil_tzotzil<- subset_samples(phyloseq_rel.abundance_soil, source== "Soil" & farmer_type== "Tzotzil")
+
+### Remove OTUs no longer present
+phyloseq_rel.abundance_soil_tzotzil <- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_tzotzil) > 0, phyloseq_rel.abundance_soil_tzotzil)
+
+#
+### Final tables for further analyses are:
+#
+
+### Soil and type of farmer Tzotzil
+
+### Summary
+phyloseq_rel.abundance_soil_tzotzil
+
+######################################################################################################################################################################
+
+#
+### Concatenate at the taxonomic level of Family
+#
+phyloseq_rel.abundance_soil_tzotzil_family <-tax_glom(phyloseq_rel.abundance_soil_tzotzil,taxrank = "Family")
+
+### Check
+head(otu_table(phyloseq_rel.abundance_soil_tzotzil_family), n=3)
+
+### Remove OTUs that appear only in one sample
+
+### Check if there are OTUs appearing only in one sample
+sum(taxa_sums(phyloseq_rel.abundance_soil_tzotzil_family) == 1)
+
+### Keep only those OTUs present in more than one sample
+phyloseq_rel.abundance_soil_tzotzil_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_tzotzil_family) > 1, phyloseq_rel.abundance_soil_tzotzil_family)
+phyloseq_rel.abundance_soil_tzotzil_family
+
+#####################################################################################################################################################################
+
 ##
-### farmer_type
+###  Relative abundance table with OTU of bacterial communities associated with soil and Tzotzil farmer
 ##
 
-### Filter Soil & Tzotzil
+OTU5 = as(otu_table(phyloseq_rel.abundance_soil_tzotzil_family), "matrix")
+OTUdf = as.data.frame(OTU5)
 
-binary_soil_tzotzil<- subset_samples(binary_table, source== "Soil" & farmer_type== "Tzotzil")
-binary_soil_tzotzil
+write.csv(OTU5, file = "relative_abundance_soil_tzotzil_FAM.csv")
 
-phyloseq.rel_soil_tzotzil<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Tzotzil")
-phyloseq.rel_soil_tzotzil
+##
+### Relative abundance table with taxa of bacterial communities associated with soil and Tzotzil farmer
+##
 
-### Remove OTUs no longer present 
+OTU6 = as(tax_table(phyloseq_rel.abundance_soil_tzotzil_family), "matrix")
+OTUdf = as.data.frame(OTU6)
 
-binary_soil_tzotzil <- prune_taxa(taxa_sums(binary_soil_tzotzil) > 0, binary_soil_tzotzil)
-binary_soil_tzotzil
+write.csv(OTU6, file = "tax_soil_tzotzil_FAM.csv")
 
-phyloseq.rel_soil_tzotzil <- prune_taxa(taxa_sums(phyloseq.rel_soil_tzotzil) > 0, phyloseq.rel_soil_tzotzil)
-phyloseq.rel_soil_tzotzil
+######################################################################################################################################################################
+######################################################################################################################################################################
 
-################################################################################################################################################
-################################################################################################################################################
+#
+### Soil and type of farmer
+#
 
-### Filter Soil & Mestizo
-
-binary_soil_mestizo<- subset_samples(binary_table, source== "Soil" & farmer_type== "Mestizo")
-binary_soil_mestizo
-
-phyloseq.rel_soil_mestizo<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Mestizo")
-phyloseq.rel_soil_mestizo
-
-# Remove OTUs no longer present 
-
-binary_soil_mestizo <- prune_taxa(taxa_sums(binary_soil_mestizo) > 0, binary_soil_mestizo)
-binary_soil_mestizo
-
-phyloseq.rel_soil_mestizo <- prune_taxa(taxa_sums(phyloseq.rel_soil_mestizo) > 0, phyloseq.rel_soil_mestizo)
-phyloseq.rel_soil_mestizo
-
-################################################################################################################################################
-################################################################################################################################################
-
-### Filter Soil & Tzotzil & Landrace
-
-binary_soil_tzotzil_landrace<- subset_samples(binary_table, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Landrace")
-binary_soil_tzotzil_landrace
-
-phyloseq.rel_soil_tzotzil_landrace<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Landrace")
-phyloseq.rel_soil_tzotzil_landrace
+### Filter soil and type of farmer Mestizo
+phyloseq_rel.abundance_soil_mestizo<- subset_samples(phyloseq_rel.abundance_soil, source== "Soil" & farmer_type== "Mestizo")
 
 ### Remove OTUs no longer present
+phyloseq_rel.abundance_soil_mestizo <- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_mestizo) > 0, phyloseq_rel.abundance_soil_mestizo)
 
-binary_soil_tzotzil_landrace <- prune_taxa(taxa_sums(binary_soil_tzotzil_landrace) > 0, binary_soil_tzotzil_landrace)
-binary_soil_tzotzil_landrace
+#
+### Final tables for further analyses are:
+#
 
-phyloseq.rel_soil_tzotzil_landrace <- prune_taxa(taxa_sums(phyloseq.rel_soil_tzotzil_landrace) > 0, phyloseq.rel_soil_tzotzil_landrace)
-phyloseq.rel_soil_tzotzil_landrace
+### Soil and type of farmer Mestizo
 
-##############################################################################################################################################
-##############################################################################################################################################
+### Summary
+phyloseq_rel.abundance_soil_mestizo
 
-### Filter Soil & Tzotzil & Hybrid
+#####################################################################################################################################################################
 
-binary_soil_tzotzil_hybrid<- subset_samples(binary_table, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Hybrid")
-binary_soil_tzotzil_hybrid
+#
+### Concatenate at the taxonomic level of Family
+#
+phyloseq_rel.abundance_soil_mestizo_family <-tax_glom(phyloseq_rel.abundance_soil_mestizo,taxrank = "Family")
 
-phyloseq.rel_soil_tzotzil_hybrid<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Hybrid")
-phyloseq.rel_soil_tzotzil_hybrid
+### Check
+head(otu_table(phyloseq_rel.abundance_soil_mestizo_family), n=3)
 
-### Remove OTUs no longer present
+### Remove OTUs that appear only in one sample
 
-binary_soil_tzotzil_hybrid <- prune_taxa(taxa_sums(binary_soil_tzotzil_hybrid) > 0, binary_soil_tzotzil_hybrid)
-binary_soil_tzotzil_hybrid
+### Check if there are OTUs appearing only in one sample
+sum(taxa_sums(phyloseq_rel.abundance_soil_mestizo_family) == 1)
 
-phyloseq.rel_soil_tzotzil_hybrid <- prune_taxa(taxa_sums(phyloseq.rel_soil_tzotzil_hybrid) > 0, phyloseq.rel_soil_tzotzil_hybrid)
-phyloseq.rel_soil_tzotzil_hybrid
+### Keep only those OTUs present in more than one sample
+phyloseq_rel.abundance_soil_mestizo_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_mestizo_family) > 1, phyloseq_rel.abundance_soil_mestizo_family)
+phyloseq_rel.abundance_soil_mestizo_family
 
-##############################################################################################################################################
-##############################################################################################################################################
+###################################################################################################################################################################
 
-### Filter Soil & Mestizo & Landrace
+#
+###  Relative abundance table with OTU of bacterial communities associated with soil and Mestizo farmer
+#
 
-binary_soil_mestizo_landrace<- subset_samples(binary_table, source== "Soil" & farmer_type== "Mestizo" & maize_type== "Landrace")
-binary_soil_mestizo_landrace
+OTU7 = as(otu_table(phyloseq_rel.abundance_soil_mestizo_family), "matrix")
+OTUdf = as.data.frame(OTU7)
 
-phyloseq.rel_soil_mestizo_landrace<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Mestizo" & maize_type== "Landrace")
-phyloseq.rel_soil_mestizo_landrace
+write.csv(OTU7, file = "relative_abundance_soil_mestizo_FAM.csv")
 
-### Remove OTUs no longer present
+#
+### Relative abundance table with taxa of bacterial communities associated with soil and Mestizo farmer
+#
 
-binary_soil_mestizo_landrace <- prune_taxa(taxa_sums(binary_soil_mestizo_landrace) > 0, binary_soil_mestizo_landrace)
-binary_soil_mestizo_landrace
+OTU8 = as(tax_table(phyloseq_rel.abundance_soil_mestizo_family), "matrix")
+OTUdf = as.data.frame(OTU8)
 
-phyloseq.rel_soil_mestizo_landrace <- prune_taxa(taxa_sums(phyloseq.rel_soil_mestizo_landrace) > 0, phyloseq.rel_soil_mestizo_landrace)
-phyloseq.rel_soil_mestizo_landrace
-
-############################################################################################################################################
-############################################################################################################################################
-
-### Filter Soil & Mestizo & Hybrid
-
-binary_soil_mestizo_hybrid<- subset_samples(binary_table, source== "Soil" & farmer_type== "Mestizo" & maize_type== "Hybrid")
-binary_soil_mestizo_hybrid
-
-phyloseq.rel_soil_mestizo_hybrid<- subset_samples(phyloseq.rel, source== "Soil" & farmer_type== "Mestizo" & maize_type== "Hybrid")
-phyloseq.rel_soil_mestizo_hybrid
-
-### Remove OTUs no longer present
-
-binary_soil_mestizo_hybrid <- prune_taxa(taxa_sums(binary_soil_mestizo_hybrid) > 0, binary_soil_mestizo_hybrid)
-binary_soil_mestizo_hybrid
-
-phyloseq.rel_soil_mestizo_hybrid <- prune_taxa(taxa_sums(phyloseq.rel_soil_mestizo_hybrid) > 0, phyloseq.rel_soil_mestizo_hybrid)
-phyloseq.rel_soil_mestizo_hybrid
+write.csv(OTU8, file = "tax_soil_mestizo_FAM.csv")
