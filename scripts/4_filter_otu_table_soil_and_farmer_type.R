@@ -21,44 +21,25 @@ phyloseq_rel.abundance_soil_tzotzil <- prune_taxa(taxa_sums(phyloseq_rel.abundan
 ### Summary
 phyloseq_rel.abundance_soil_tzotzil
 
-######################################################################################################################################################################
-
-#
-### Concatenate at the taxonomic level of Family
-#
-phyloseq_rel.abundance_soil_tzotzil_family <-tax_glom(phyloseq_rel.abundance_soil_tzotzil,taxrank = "Family")
-
-### Check
-head(otu_table(phyloseq_rel.abundance_soil_tzotzil_family), n=3)
-
-### Remove OTUs that appear only in one sample
-
-### Check if there are OTUs appearing only in one sample
-sum(taxa_sums(phyloseq_rel.abundance_soil_tzotzil_family) == 1)
-
-### Keep only those OTUs present in more than one sample
-phyloseq_rel.abundance_soil_tzotzil_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_tzotzil_family) > 1, phyloseq_rel.abundance_soil_tzotzil_family)
-phyloseq_rel.abundance_soil_tzotzil_family
-
-#####################################################################################################################################################################
+##############################################
 
 ##
 ###  Relative abundance table with OTU of bacterial communities associated with soil and Tzotzil farmer
 ##
 
-OTU5 = as(otu_table(phyloseq_rel.abundance_soil_tzotzil_family), "matrix")
-OTUdf = as.data.frame(OTU5)
+OTU7 = as(otu_table(phyloseq_rel.abundance_soil_tzotzil), "matrix")
+OTUdf = as.data.frame(OTU7)
 
-write.csv(OTU5, file = "relative_abundance_soil_tzotzil_FAM.csv")
+write.csv(OTU7, file = "relative_abundance_soil_tzotzil.csv")
 
 ##
 ### Relative abundance table with taxa of bacterial communities associated with soil and Tzotzil farmer
 ##
 
-OTU6 = as(tax_table(phyloseq_rel.abundance_soil_tzotzil_family), "matrix")
-OTUdf = as.data.frame(OTU6)
+OTU8 = as(tax_table(phyloseq_rel.abundance_soil_tzotzil), "matrix")
+OTUdf = as.data.frame(OTU8)
 
-write.csv(OTU6, file = "tax_soil_tzotzil_FAM.csv")
+write.csv(OTU8, file = "tax_soil_tzotzil.csv")
 
 ######################################################################################################################################################################
 ######################################################################################################################################################################
@@ -82,41 +63,23 @@ phyloseq_rel.abundance_soil_mestizo <- prune_taxa(taxa_sums(phyloseq_rel.abundan
 ### Summary
 phyloseq_rel.abundance_soil_mestizo
 
-#####################################################################################################################################################################
-
-#
-### Concatenate at the taxonomic level of Family
-#
-phyloseq_rel.abundance_soil_mestizo_family <-tax_glom(phyloseq_rel.abundance_soil_mestizo,taxrank = "Family")
-
-### Check
-head(otu_table(phyloseq_rel.abundance_soil_mestizo_family), n=3)
-
-### Remove OTUs that appear only in one sample
-
-### Check if there are OTUs appearing only in one sample
-sum(taxa_sums(phyloseq_rel.abundance_soil_mestizo_family) == 1)
-
-### Keep only those OTUs present in more than one sample
-phyloseq_rel.abundance_soil_mestizo_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_mestizo_family) > 1, phyloseq_rel.abundance_soil_mestizo_family)
-phyloseq_rel.abundance_soil_mestizo_family
-
-###################################################################################################################################################################
+###########################################
 
 #
 ###  Relative abundance table with OTU of bacterial communities associated with soil and Mestizo farmer
 #
 
-OTU7 = as(otu_table(phyloseq_rel.abundance_soil_mestizo_family), "matrix")
-OTUdf = as.data.frame(OTU7)
+OTU9 = as(otu_table(phyloseq_rel.abundance_soil_mestizo), "matrix")
+OTUdf = as.data.frame(OTU9)
 
-write.csv(OTU7, file = "relative_abundance_soil_mestizo_FAM.csv")
+write.csv(OTU9, file = "relative_abundance_soil_mestizo.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil and Mestizo farmer
 #
 
-OTU8 = as(tax_table(phyloseq_rel.abundance_soil_mestizo_family), "matrix")
-OTUdf = as.data.frame(OTU8)
+OTU10 = as(tax_table(phyloseq_rel.abundance_soil_mestizo), "matrix")
+OTUdf = as.data.frame(OTU10)
 
-write.csv(OTU8, file = "tax_soil_mestizo_FAM.csv")
+write.csv(OTU10, file = "tax_soil_mestizo.csv")
+
