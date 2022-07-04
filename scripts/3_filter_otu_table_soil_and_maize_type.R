@@ -30,7 +30,7 @@ phyloseq_rel.abundance_soil_landrace
 OTU3 = as(otu_table(phyloseq_rel.abundance_soil_landrace), "matrix")
 OTUdf = as.data.frame(OTU3)
 
-write.csv(OTU3, file = "relative_ab_soil_landrace.csv")
+write.csv(OTU3, file = "relative_abundance_soil_landrace.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil
