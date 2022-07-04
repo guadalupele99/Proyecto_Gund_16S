@@ -31,49 +31,6 @@ phyloseq_rel.abundance_soil_tzotzil
 phyloseq_rel.abundance_soil_mestizo
 
 ###################################################################################################################################################################
-
-#
-### Accumulation curve for maize type data 
-#
-
-### Get the accumulation curve counting for maize hybrid data
-select = phyloseq_rel.abundance_soil_hybrid ### Select data
-data = t(otu_table(select)) ### OTU table in vegan
-data  
-
-### Plot
-plot(specaccum(data))
-
-### Get the accumulation curve counting for maize landrace data
-select = phyloseq_rel.abundance_soil_landrace ### Select data
-data = t(otu_table(select)) ### OTU table in vegan
-data  
-
-### Plot
-plot(specaccum(data))
-
-######################################################################################################################################################################
-
-#
-### Accumulation curve for farmer type data
-#
-
-### Get the accumulation curve counting for farmer Mestizo data
-select = phyloseq_rel.abundance_soil_mestizo ### Select data
-data = t(otu_table(select)) ### OTU table in vegan
-data  
-
-### Plot
-plot(specaccum(data))
-
-### Get the accumulation curve counting for farmer Tzotzil data
-select = phyloseq_rel.abundance_soil_tzotzil ### Select data
-data = t(otu_table(select)) ### OTU table in vegan
-data  
-
-### Plot
-plot(specaccum(data))
-
 ####################################################################################################################################################################
 
 #
@@ -153,7 +110,7 @@ leveneTest(Chao1 ~ maize_type, data=data)
 
 #
 ### Data are not normal, perform nonparametric test:
-### Kruskal-Wallis test: no parametric
+### U-Mann Whitney test: no parametric
 #
 
 ######################################################################################################################################################################
@@ -163,25 +120,22 @@ leveneTest(Chao1 ~ maize_type, data=data)
 #
 
 #
-### Kruskal-Wallis test: no parametric
+### U-Mann Whitney test: no parametric
 #
 
-head(data)
-levels(data$maize_type)
+###
+### Load libraries
+###
 
-### Obtain diagnostic measurements 
-group_by(data, maize_type) %>%
-  summarise(
-    count = n(),
-    mean = mean(Chao1, na.rm = TRUE),
-    sd = sd(Chao1, na.rm = TRUE), 
-    median = median(Chao1, na.rm = TRUE),
-    IQR = IQR(Chao1, na.rm = TRUE)
-  )
+library(coin)
+library(survival)
 
-### Kruskal-Wallis test 
-KW1<- kruskal.test(Chao1 ~ maize_type, data)
-KW1
+### U-Mann Whitney test
+
+Landrace = c(1066.5949, 630.3438, 979.0403, 1127.6933, 1155.7341, 1128.5189, 1045.6765, 1156.6319, 1152.6053, 1021.0892, 1063.7586, 1070.4365, 1182.0303, 1036.5195, 1138.3571, 1124.3678, 1183.6607, 1209.6647, 1238.8810, 1114.2500)
+Hybrid = c(1058.4393, 1115.8780, 1003.1136, 1155.9211, 1051.1897, 1087.0347, 1158.6875, 1120.8571, 1126.6183, 939.1533, 1205.4483, 1117.0186, 1140.5617, 1088.0000, 1172.0940, 1071.0420, 1103.1500, 1097.0244, 1110.6221, 1165.5780, 1136.6446, 1272.1240)
+
+wilcox.test(Landrace, Hybrid)
 
 #################################################################################################################################################################
 
@@ -218,7 +172,7 @@ leveneTest(Chao1 ~ farmer_type, data=data)
 
 #
 ### Data are not normal, perform nonparametric test:
-### Kruskal-Wallis test: no parametric
+### U-Mann Whitney test: no parametric
 #
 
 #####################################################################################################################################################################
@@ -228,25 +182,22 @@ leveneTest(Chao1 ~ farmer_type, data=data)
 #
 
 #
-### Kruskal-Wallis test: no parametric
+### U-Mann Whitney test: no parametric
 #
 
-head(data)
-levels(data$farmer_type)
+###
+### Load libraries
+###
 
-### Obtain diagnostic measurements 
-group_by(data, farmer_type) %>%
-  summarise(
-    count = n(),
-    mean = mean(Chao1, na.rm = TRUE),
-    sd = sd(Chao1, na.rm = TRUE), 
-    median = median(Chao1, na.rm = TRUE),
-    IQR = IQR(Chao1, na.rm = TRUE)
-  )
+library(coin)
+library(survival)
 
-### Kruskal-Wallis test 
-KW2<- kruskal.test(Chao1 ~ farmer_type, data)
-KW2
+### U-Mann Whitney test
+
+Tzotzil = c(1066.5949, 630.3438, 979.0403, 1182.0303, 1036.5195, 1138.3571, 1124.3678, 1183.6607, 1209.6647, 1058.4393, 1115.8780, 1003.1136, 1155.9211, 1051.1897, 1087.0347, 1158.6875, 1120.8571, 1126.6183, 939.1533, 1165.5780, 1114.2500, 1272.1240)
+Mestizo = c(1127.6933, 1155.7341, 1128.5189, 1045.6765, 1156.6319, 1152.6053, 1021.0892, 1063.7586, 1070.4365, 1205.4483, 1117.0186, 1140.5617, 1088.0000, 1172.0940, 1071.0420, 1103.1500, 1097.0244, 1110.6221, 1238.8810, 1136.6446)
+
+wilcox.test(Tzotzil, Mestizo)
 
 #################################################################################################################################################################
 #################################################################################################################################################################
