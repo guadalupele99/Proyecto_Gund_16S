@@ -27,19 +27,19 @@ phyloseq_rel.abundance_soil_landrace
 ###  Relative abundance table with OTU of bacterial communities associated with soil and landrace maize
 #
 
-OTU30 = as(otu_table(phyloseq_rel.abundance_soil_landrace), "matrix")
-OTUdf = as.data.frame(OTU30)
+OTU3 = as(otu_table(phyloseq_rel.abundance_soil_landrace), "matrix")
+OTUdf = as.data.frame(OTU3)
 
-write.csv(OTU30, file = "relative_ab_soil_landrace_NIVEL OTU.csv")
+write.csv(OTU3, file = "relative_ab_soil_landrace_NIVEL OTU.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil
 #
 
-OTU31 = as(tax_table(phyloseq_rel.abundance_soil_landrace), "matrix")
-OTUdf = as.data.frame(OTU31)
+OTU4 = as(tax_table(phyloseq_rel.abundance_soil_landrace), "matrix")
+OTUdf = as.data.frame(OTU4)
 
-write.csv(OTU31, file = "tax_soil_landrace_NIVEL OTU.csv")
+write.csv(OTU4, file = "tax_soil_landrace_NIVEL OTU.csv")
 
 ###################################################################################################################################################################
 ###################################################################################################################################################################
@@ -69,16 +69,16 @@ phyloseq_rel.abundance_soil_hybrid
 ###  Relative abundance table with OTU of bacterial communities associated with soil and hybrid maize
 #
 
-OTU32 = as(otu_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
-OTUdf = as.data.frame(OTU32)
+OTU5 = as(otu_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
+OTUdf = as.data.frame(OTU5)
 
-write.csv(OTU32, file = "relative_abundance_soil_hybrid_NIVEL OTU.csv")
+write.csv(OTU5, file = "relative_abundance_soil_hybrid_NIVEL OTU.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil and hybrid maize
 #
 
-OTU33 = as(tax_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
-OTUdf = as.data.frame(OTU33)
+OTU6 = as(tax_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
+OTUdf = as.data.frame(OTU6)
 
-write.csv(OTU33, file = "tax_soil_hybrid_NIVEL OTU.csv")
+write.csv(OTU6, file = "tax_soil_hybrid_NIVEL OTU.csv")
