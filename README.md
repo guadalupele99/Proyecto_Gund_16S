@@ -15,10 +15,6 @@ It contains the scripts to analyze the OTU of bacterial communities associated w
 
 R version 4.0.5.
 
-Cytoscape version 3.9.0.
-
-CoNet version 1.1.1.beta
-
 ## Repository organization
 
 Gund metabarcoding
