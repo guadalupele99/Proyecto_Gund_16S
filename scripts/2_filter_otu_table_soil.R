@@ -27,19 +27,19 @@ phyloseq_rel.abundance_soil
 ###  Relative abundance table with OTU of bacterial communities associated with soil
 #
 
-OTU0 = as(otu_table(phyloseq_rel.abundance_soil), "matrix")
-OTUdf = as.data.frame(OTU0)
+OTU1 = as(otu_table(phyloseq_rel.abundance_soil), "matrix")
+OTUdf = as.data.frame(OTU1)
 
-write.csv(OTU0, file = "relative_abundance_soil.csv")
+write.csv(OTU1, file = "relative_abundance_soil.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil
 #
 
-OTU01 = as(tax_table(phyloseq_rel.abundance_soil), "matrix")
-OTUdf = as.data.frame(OTU01)
+OTU2 = as(tax_table(phyloseq_rel.abundance_soil), "matrix")
+OTUdf = as.data.frame(OTU2)
 
-write.csv(OTU01, file = "tax_soil_landrace_FAM.csv")
+write.csv(OTU2, file = "tax_soil_landrace_FAM.csv")
 
 ### Samples
 sample_data(phyloseq_rel.abundance_soil)
