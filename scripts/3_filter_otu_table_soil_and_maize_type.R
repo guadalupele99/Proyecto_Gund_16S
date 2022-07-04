@@ -21,26 +21,25 @@ phyloseq_rel.abundance_soil_landrace <- prune_taxa(taxa_sums(phyloseq_rel.abunda
 ### Summary
 phyloseq_rel.abundance_soil_landrace
 
-###################################################################################################################################################################
-###################################################################################################################################################################
+######################################
 
 #
 ###  Relative abundance table with OTU of bacterial communities associated with soil and landrace maize
 #
 
-OTU1 = as(otu_table(phyloseq_rel.abundance_soil_landrace_family), "matrix")
-OTUdf = as.data.frame(OTU1)
+OTU30 = as(otu_table(phyloseq_rel.abundance_soil_landrace), "matrix")
+OTUdf = as.data.frame(OTU30)
 
-write.csv(OTU1, file = "relative_abundance_soil_landrace_FAM.csv")
+write.csv(OTU30, file = "relative_ab_soil_landrace_NIVEL OTU.csv")
 
 #
-### Relative abundance table with taxa of bacterial communities associated with soil and landrace maize
+### Relative abundance table with taxa of bacterial communities associated with soil
 #
 
-OTU2 = as(tax_table(phyloseq_rel.abundance_soil_landrace_family), "matrix")
-OTUdf = as.data.frame(OTU2)
+OTU31 = as(tax_table(phyloseq_rel.abundance_soil_landrace), "matrix")
+OTUdf = as.data.frame(OTU31)
 
-write.csv(OTU2, file = "tax_soil_landrace_FAM.csv")
+write.csv(OTU31, file = "tax_soil_landrace_NIVEL OTU.csv")
 
 ###################################################################################################################################################################
 ###################################################################################################################################################################
@@ -64,23 +63,22 @@ phyloseq_rel.abundance_soil_hybrid <- prune_taxa(taxa_sums(phyloseq_rel.abundanc
 ### Summary
 phyloseq_rel.abundance_soil_hybrid
 
-####################################################################################################################################################################
-####################################################################################################################################################################
+###########################################
 
 #
 ###  Relative abundance table with OTU of bacterial communities associated with soil and hybrid maize
 #
 
-OTU3 = as(otu_table(phyloseq_rel.abundance_soil_hybrid_family), "matrix")
-OTUdf = as.data.frame(OTU3)
+OTU32 = as(otu_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
+OTUdf = as.data.frame(OTU32)
 
-write.csv(OTU3, file = "relative_abundance_soil_hybrid_FAM.csv")
+write.csv(OTU32, file = "relative_abundance_soil_hybrid_NIVEL OTU.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with soil and hybrid maize
 #
 
-OTU4 = as(tax_table(phyloseq_rel.abundance_soil_hybrid_family), "matrix")
-OTUdf = as.data.frame(OTU4)
+OTU33 = as(tax_table(phyloseq_rel.abundance_soil_hybrid), "matrix")
+OTUdf = as.data.frame(OTU33)
 
-write.csv(OTU4, file = "tax_soil_hybrid_FAM.csv")
+write.csv(OTU33, file = "tax_soil_hybrid_NIVEL OTU.csv")
