@@ -21,25 +21,7 @@ phyloseq_rel.abundance_soil_landrace <- prune_taxa(taxa_sums(phyloseq_rel.abunda
 ### Summary
 phyloseq_rel.abundance_soil_landrace
 
-#################################################################################################################################################################
-
-#
-### Concatenate at the taxonomic level of Family
-#
-phyloseq_rel.abundance_soil_landrace_family <-tax_glom(phyloseq_rel.abundance_soil_landrace,taxrank = "Family")
-
-### Check
-head(otu_table(phyloseq_rel.abundance_soil_landrace_family), n=3)
-
-### Remove OTUs that appear only in one sample
-
-### Check if there are OTUs appearing only in one sample
-sum(taxa_sums(phyloseq_rel.abundance_soil_landrace_family) == 1)
-
-### Keep only those OTUs present in more than one sample
-phyloseq_rel.abundance_soil_landrace_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_landrace_family) > 1, phyloseq_rel.abundance_soil_landrace_family)
-phyloseq_rel.abundance_soil_landrace_family
-
+###################################################################################################################################################################
 ###################################################################################################################################################################
 
 #
@@ -82,25 +64,7 @@ phyloseq_rel.abundance_soil_hybrid <- prune_taxa(taxa_sums(phyloseq_rel.abundanc
 ### Summary
 phyloseq_rel.abundance_soil_hybrid
 
-#######################################################################################################################################################################
-
-#
-### Concatenate at the taxonomic level of Family
-#
-phyloseq_rel.abundance_soil_hybrid_family <-tax_glom(phyloseq_rel.abundance_soil_hybrid,taxrank = "Family")
-
-### Check
-head(otu_table(phyloseq_rel.abundance_soil_hybrid_family), n=3)
-
-### Remove OTUs that appear only in one sample
-
-### Check if there are OTUs appearing only in one sample
-sum(taxa_sums(phyloseq_rel.abundance_soil_hybrid_family) == 1)
-
-# Keep only those OTUs present in more than one sample
-phyloseq_rel.abundance_soil_hybrid_family<-prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_hybrid_family) > 1, phyloseq_rel.abundance_soil_hybrid_family)
-phyloseq_rel.abundance_soil_hybrid_family
-
+####################################################################################################################################################################
 ####################################################################################################################################################################
 
 #
