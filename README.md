@@ -1,4 +1,4 @@
-## Proyecto-Gund: Bacterial communities associated with landrace and hybrid maize soil under two types of agricultural management (Mestizo and Tzotzil farmers) in the municipality of Ocozocoautla de Espinosa, Chiapas.
+## Proyecto-Gund: Bacterial communities of the rhizosphere in two maize seed systems (local seed and external seed) with different humidity in the municipality of Ocozocoautla de Espinosa, Chiapas
 
 Metabarcoding. Bacterial communities associated with two genotypes and agricultural management.
 
