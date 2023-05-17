@@ -1,19 +1,17 @@
 ## Proyecto-Gund: Bacterial communities of the rhizosphere in two maize seed systems (local seed and external seed) with different humidity in the municipality of Ocozocoautla de Espinosa, Chiapas
 
-Metabarcoding. Bacterial communities associated with two genotypes and agricultural management.
+Metabarcoding. Bacterial communities associated with two types of corn seeds in two regions with different humidity.
 
-Influence of genotype and agricultural management on the interactions of bacterial communities present in native and hybrid corn roots in Ocozocoautla de Espinosa, Chiapas
+Influence of the maize seed system on bacterial communities of the rhizosphere in the municipality of Ocozocoautla de Espinosa, Chiapas.
 
 
 Author: María Guadalupe León Jiménez
 
-This repository contains the necessary steps for cleaning the OTU table obtained from samples of bacterial communities associated with deep roots and rhizosphere soil in landrace and hybrid maize fields of the project "Seed systems and structuring of biodiversity in corn agroecosystems" of Dr. Alicia Mastretta.
-
-It contains the scripts to analyze the OTU of bacterial communities associated with roots and soil in plots of landrace and hybrid maize under two types of agricultural management.
+This repository contains the necessary steps for cleaning the OTU table obtained from samples of bacterial communities associated with the local and external maize rhizosphere of the project "Seed systems and structuring of biodiversity in corn agroecosystems" of Dr. Alicia Mastretta.
 
 ## Software versions used throughout this repository
 
-R version 4.0.5.
+R version 4.2.1
 
 ## Repository organization
 
