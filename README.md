@@ -31,8 +31,8 @@ Gund metabarcoding
 
 Scripts should be run in the order indicated by the number they start with.
 
-* 1_filter_otu_table_16s.R R script used to clean the OTU table by removing negative controls, changing to relative abundance, and removing 0 OTU reads and samples that are no longer present.
-
+* 1_filter_otu_table_16s.R R script to load the library used, import the .biom file, filter the negative control reads, remove OTUs that are no longer present as well as negative control samples, and generate a table of relative abundances.
+ 
 * 2_filter_otu_table_soil.R R script to filter OTUs from bacterial communities that belong exclusively to soil sampling, remove OTUs that are no longer present, and obtain the final table for further analysis.
 
 * 3_filter_otu_table_soil_and_maize_type.R R script to filter the OTU table that contains the OTU of bacterial communities present in the soil of landrace and hybrid maize. Change the data to relative abundance and remove the OTUs not present. Finally, it allows saving the tables obtained, as well as their associated relative abundances.
