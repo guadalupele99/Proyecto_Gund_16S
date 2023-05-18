@@ -7,7 +7,6 @@
 #
 
 library(phyloseq)
-library(ggplot2)
 
 #
 ### Load data
