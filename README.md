@@ -33,7 +33,7 @@ Scripts should be run in the order indicated by the number they start with.
 
 * 1_filter_otu_table_16s.R R script to load the library used, import the .biom file, filter the negative control reads, remove OTUs that are no longer present as well as negative control samples, and generate a table of relative abundances.
  
-* 2_filter_otu_table_soil.R R script to filter OTUs from bacterial communities that belong exclusively to soil sampling, remove OTUs that are no longer present, and obtain the final table for further analysis.
+* 2_filter_otu_table_soil.R R script to filter the data corresponding to soil bacterial communities, remove OTUs that are no longer present and obtain relative abundance tables with OTUs of bacterial communities associated with the filtered data.
 
 * 3_filter_otu_table_soil_and_maize_type.R R script to filter the OTU table that contains the OTU of bacterial communities present in the soil of landrace and hybrid maize. Change the data to relative abundance and remove the OTUs not present. Finally, it allows saving the tables obtained, as well as their associated relative abundances.
 
