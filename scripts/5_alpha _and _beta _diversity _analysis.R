@@ -25,10 +25,10 @@ library(car)
 
 ### 16s soil
 phyloseq_rel.abundance_soil
-phyloseq_rel.abundance_soil_landrace
-phyloseq_rel.abundance_soil_hybrid
-phyloseq_rel.abundance_soil_tzotzil
-phyloseq_rel.abundance_soil_mestizo
+phyloseq_rel.abundance_soil_local seed_low humidity
+phyloseq_rel.abundance_soil_local seed_medium humidity
+phyloseq_rel.abundance_soil_external seed_low humidity
+phyloseq_rel.abundance_soil_external seed_medium humidity
 
 ###################################################################################################################################################################
 ####################################################################################################################################################################
