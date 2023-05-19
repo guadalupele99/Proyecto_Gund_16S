@@ -34,84 +34,99 @@ phyloseq_rel.abundance_soil_external seed_medium humidity
 ####################################################################################################################################################################
 
 #
-### Plot Alpha Diversity 
+### Plot Alpha Diversity of the local seed in two humidity
 #
 
-### 16s soil
+#
+### Alpha diversity of the local seed in the region with low humidity (where farmer_type Tzotzil represents the low humidity)
+#
 
-#
-### Richness in terms of Chao1 by maize type
-#
-plot_richness(phyloseq_rel.abundance_soil, x= "maize_type", color="maize_type", measures=("Chao1")) +
-  geom_boxplot(aes(x=maize_type, y=value, color=NULL), alpha=0.1) + geom_jitter() +
-  ggtitle("(A)")
+pr1 <- plot_richness(phyloseq_rel.abundance_soil_local seed_low humidity, x= "farmer_type", color="farmer_type", measures=("Shannon")) +
+  geom_boxplot(aes(x=farmer_type, y=value, color=NULL), alpha=0.1) + geom_jitter() +
+  labs(x = '', y = "Medida de diversidad alfa", color= "Tipo de agricultor", size = 12) +
+  scale_x_discrete(labels=c("Tzotzil" = "R1.Humedad baja"))+
+  theme(legend.position='none')+
+  theme(axis.text.x = element_text(angle = 360))+
+  theme(axis.text = element_text(size=10))
+pr1
 
 #
 ### Save plot
 #
-ggsave(filename = "Chao1 by maize type.png", width = 8, height = 12, dpi = 300, units = "cm")
+ggsave(filename = "semilla local y humedad baja.png", width = 8, height = 14, dpi = 300, units = "cm")
 
-##################################################################################################################################################################
+###########################################################################################################################################################
+###########################################################################################################################################################
 
 #
-### Richness in terms of Chao1 by farmer type
+### Alpha diversity of the local seed in the region with medium humidity (where farmer_type Mestizo represents the medium humidity)
 #
-plot_richness(phyloseq_rel.abundance_soil, x= "farmer_type", color="farmer_type", measures=("Chao1")) +
+
+pr2 <- plot_richness(phyloseq_rel.abundance_soil_local seed_medium humidity, x= "farmer_type", color="farmer_type", measures=("Shannon")) +
   geom_boxplot(aes(x=farmer_type, y=value, color=NULL), alpha=0.1) + geom_jitter() +
-  ggtitle("(B)")
+  labs(x = '', y = "Medida de diversidad alfa", color= "Tipo de agricultor", size = 12) +
+  scale_x_discrete(labels=c("Mestizo" = "R2.Humedad media"))+
+  theme(legend.position='none')+
+  theme(axis.text.x = element_text(angle = 360))+
+  theme(axis.text = element_text(size=10))
+pr2
 
 #
-### save plot
+### Save plot
 #
-ggsave(filename = "Chao1 by farmer type.png", width = 8, height = 12, dpi = 300, units = "cm")
+ggsave(filename = "semilla local y humedad media.png", width = 8, height = 14, dpi = 300, units = "cm")
 
-###################################################################################################################################################################
-
-#
-### Table for diversity measures and sample data
-#
-
-alpha.diversity <-estimate_richness(phyloseq_rel.abundance_soil, measures=("Chao1")) 
-data <- cbind(sample_data(phyloseq_rel.abundance_soil), alpha.diversity) ### Combine metadata with alpha diversity
-data
-
-####################################################################################################################################################################
+#############################################################################################################################################
 
 #
-### ANOVA test to check that the data meets the assumptions
+### Plot Alpha Diversity of the external seed in two humidity
 #
 
 #
-### ANOVA test for maize type data
+### Alpha diversity of the external seed in the region with low humidity (where farmer_type Tzotzil represents the low humidity)
 #
 
-### One way ANOVA
-### Dependent variable (data) : observed richness 
-### Independent variable (factor): maize type
-
-anova1<-aov(Chao1 ~ maize_type, data = data)
-summary(anova1)
-TukeyHSD(anova1)
-boxplot(Chao1 ~ maize_type, data = data)
-
-### Check normality with visual methods  
-ggdensity(alpha.diversity$Chao1, 
-          main = "Density plot of OTU richness",
-          xlab = "OTU richness")
-
-### Check linearity of models with normal qq plots 
-ggqqplot(alpha.diversity$Chao1)
-
-### Significance tests for normality 
-shapiro.test(alpha.diversity$Chao1)
-
-### Levene test for homogeneity of variances 
-leveneTest(Chao1 ~ maize_type, data=data)
+pr3 <- plot_richness(phyloseq_rel.abundance_soil_external seed_low humidity, x= "farmer_type", color="farmer_type", measures=("Shannon")) +
+  geom_boxplot(aes(x=farmer_type, y=value, color=NULL), alpha=0.1) + geom_jitter() +
+  labs(x = '', y = "Medida de diversidad alfa", color= "Tipo de agricultor", size = 12) +
+  scale_x_discrete(labels=c("Tzotzil" = "R1.Humedad baja"))+
+  theme(legend.position='none')+
+  theme(axis.text.x = element_text(angle = 360))+
+  theme(axis.text = element_text(size=10))
+pr3
 
 #
-### Data are not normal, perform nonparametric test:
-### U-Mann Whitney test: no parametric
+### Save plot
 #
+ggsave(filename = "semilla externa y humedad baja.png", width = 8, height = 14, dpi = 300, units = "cm")
+
+############################################################################################################################################################
+############################################################################################################################################################
+
+#
+### Alpha diversity of the external seed in the region with medium humidity (where farmer_type Mestizo represents the medium humidity)
+#
+
+pr4 <- plot_richness(phyloseq_rel.abundance_soil_external seed_medium humidity, x= "farmer_type", color="farmer_type", measures=("Shannon")) +
+  geom_boxplot(aes(x=farmer_type, y=value, color=NULL), alpha=0.1) + geom_jitter() +
+  labs(x = '', y = "Medida de diversidad alfa", color= "Tipo de agricultor", size = 12) +
+  scale_x_discrete(labels=c("Mestizo" = "R2.Humedad media"))+
+  theme(legend.position='none')+
+  theme(axis.text.x = element_text(angle = 360))+
+  theme(axis.text = element_text(size=10))
+pr4
+
+#
+### Save plot
+#
+ggsave(filename = "semilla externa y humedad media.png", width = 8, height = 14, dpi = 300, units = "cm")
+
+
+
+
+
+
+
 
 ######################################################################################################################################################################
 
