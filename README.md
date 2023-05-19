@@ -37,8 +37,8 @@ Scripts should be run in the order indicated by the number they start with.
  
 * 2_filter_otu_table_soil.R R script to filter the data corresponding to soil bacterial communities, remove OTUs that are no longer present and obtain relative abundance tables with OTUs of bacterial communities associated with the filtered data.
 
-* 3_filter_otu_table_soil_and_local_seed_maize.R R script to filter the OTU table that contains the bacterial communities present in the local seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
+* 3_filter_otu_table_soil_and_local_maize_seed.R R script to filter the OTU table that contains the bacterial communities present in the local seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
 
-* 4_filter_otu_table_soil_and_farmer_type.R R script to filter the OTU table that contains the bacterial communities present in the external seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
+* 4_filter_otu_table_soil_and_external_maize_seed.R R script to filter the OTU table that contains the bacterial communities present in the external seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
 
-* 5_alpha_and_beta_diversity_and_statistical_analysis.R R script to make richness graphs for landrace and hybrid maize, as well as Mestizo and Tzotzil farmers. NMDS analysis and statistical tests for each variable analyzed.
+* 5_alpha_and_beta_diversity_analysis.R R script to make richness graphs for landrace and hybrid maize, as well as Mestizo and Tzotzil farmers. NMDS analysis and statistical tests for each variable analyzed.
