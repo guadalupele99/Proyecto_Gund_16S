@@ -41,4 +41,4 @@ Scripts should be run in the order indicated by the number they start with.
 
 * 4_filter_otu_table_soil_and_external_maize_seed.R R script to filter the OTU table that contains the bacterial communities present in the external seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
 
-* 5_alpha_and_beta_diversity_analysis.R R script to make richness graphs for landrace and hybrid maize, as well as Mestizo and Tzotzil farmers. NMDS analysis and statistical tests for each variable analyzed.
+* 5_alpha_and_beta_diversity_analysis.R R script to make boxplots of estimates of alpha diversity (Shannon index) of local and external seed maize. As well as NMDS with Bray-Curtis distance between the local and external seed samples and statistical tests to find out if there are significant differences.
