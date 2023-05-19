@@ -1,45 +1,46 @@
 #
-### Divide the data by soil and type of maize
+### Filter the sampled data of bacterial communities in local seed associated to two regions with different humidity (where farmer_type represents the regions, Tzotzil=low humidity and Mestizo=medium humidity).
 #
 
 #
-### Soil and type of maize
+### 
 #
 
-### Filter soil and type of maize landrace
-phyloseq_rel.abundance_soil_landrace<- subset_samples(phyloseq_rel.abundance_soil, source== "Soil" & maize_type== "Landrace")
+### Filter soil, landrace (local seed) and Tzotzil (low humidity)
+phyloseq_rel.abundance_soil_tzotzil_landrace<- subset_samples(phyloseq_rel.abundance_soil, source== "Soil" & farmer_type== "Tzotzil" & maize_type== "Landrace")
 
 ### Remove OTUs no longer present
-phyloseq_rel.abundance_soil_landrace <- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_landrace) > 0, phyloseq_rel.abundance_soil_landrace)
+phyloseq_rel.abundance_soil_tzotzil_landrace <- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_tzotzil_landrace) > 0, phyloseq_rel.abundance_soil_tzotzil_landrace)
 
 #
 ### Final tables for further analyses are:
 #
 
-### Soil and type of maize landrace
+### Soil, landrace maize and Tzotzil
 
 ### Summary
-phyloseq_rel.abundance_soil_landrace
+phyloseq_rel.abundance_soil_tzotzil_landrace
 
-######################################
-
-#
-###  Relative abundance table with OTU of bacterial communities associated with soil and landrace maize
-#
-
-OTU3 = as(otu_table(phyloseq_rel.abundance_soil_landrace), "matrix")
-OTUdf = as.data.frame(OTU3)
-
-write.csv(OTU3, file = "relative_abundance_soil_landrace.csv")
+###########################################
 
 #
-### Relative abundance table with taxa of bacterial communities associated with soil
+###  Relative abundance table with OTU of bacterial communities associated with the local seed in the low humidity
 #
 
-OTU4 = as(tax_table(phyloseq_rel.abundance_soil_landrace), "matrix")
-OTUdf = as.data.frame(OTU4)
+OTU38 = as(otu_table(phyloseq_rel.abundance_soil_tzotzil_landrace), "matrix")
+OTUdf = as.data.frame(OTU38)
 
-write.csv(OTU4, file = "tax_soil_landrace.csv")
+write.csv(OTU38, file = "relative_abundance_soil_TZOTZIL_LANDRACE.csv")
+
+#
+### Relative abundance table with taxa of bacterial communities associated with the local seed in the low humidity
+#
+
+OTU39 = as(tax_table(phyloseq_rel.abundance_soil_tzotzil_landrace), "matrix")
+OTUdf = as.data.frame(OTU39)
+
+write.csv(OTU39, file = "tax_soil_local seed_low humidity.csv")
+
 
 ###################################################################################################################################################################
 ###################################################################################################################################################################
