@@ -9,7 +9,7 @@ Author: María Guadalupe León Jiménez
 
 This repository contains the necessary steps for cleaning the OTU table obtained from samples of bacterial communities associated with the local and external maize rhizosphere of the project "Seed systems and structuring of biodiversity in corn agroecosystems" of Dr. Alicia Mastretta.
 
-Important: For the purposes of our research work, landrace was changed to local seed, hybrid to external seed, Tzotzil to low humidity, and Mestizo to medium humidity.
+Important: For the purposes of our research work, landrace was changed to local seed, hybrid to external seed, Tzotzil to low humidity, and Mestizo to medium humidity (according to the climate present in the study regions).
 
 ## Software versions used throughout this repository
 
