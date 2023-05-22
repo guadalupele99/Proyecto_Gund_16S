@@ -35,7 +35,7 @@ Scripts should be run in the order indicated by the number they start with.
 
 * 1_filter_otu_table_16s.R R script to load the library used, import the .biom file, filter the negative control reads, remove OTUs that are no longer present as well as negative control samples, and generate a table of relative abundances.
  
-* 2_filter_otu_table_soil.R R script to filter the data corresponding to soil bacterial communities, remove OTUs that are no longer present and obtain relative abundance tables with OTUs of bacterial communities associated with the filtered data.
+* 2_filter_otu_table_soil.R R script to filter the data corresponding to soil bacterial communities, remove OTUs that are no longer present and obtain relative abundance tables with OTUs of bacterial communities associated with the filtered data. It also contains the steps to filter the data associated with the local and external maize seed.
 
 * 3_filter_otu_table_soil_and_local_maize_seed.R R script to filter the OTU table that contains the bacterial communities present in the local seed associated with two humidities (low and medium) and allows saving the tables obtained with their relative abundances and taxonomy.
 
