@@ -53,7 +53,7 @@ pr1
 #
 ### Save plot
 #
-ggsave(filename = "semilla local y humedad baja.png", width = 8, height = 14, dpi = 300, units = "cm")
+ggsave(filename = "local seed_and_low humidity.png", width = 8, height = 14, dpi = 300, units = "cm")
 
 ###########################################################################################################################################################
 ###########################################################################################################################################################
@@ -74,7 +74,7 @@ pr2
 #
 ### Save plot
 #
-ggsave(filename = "semilla local y humedad media.png", width = 8, height = 14, dpi = 300, units = "cm")
+ggsave(filename = "local seed and medium humidity.png", width = 8, height = 14, dpi = 300, units = "cm")
 
 #############################################################################################################################################
 
@@ -98,7 +98,7 @@ pr3
 #
 ### Save plot
 #
-ggsave(filename = "semilla externa y humedad baja.png", width = 8, height = 14, dpi = 300, units = "cm")
+ggsave(filename = "external seed_and_low humidity.png", width = 8, height = 14, dpi = 300, units = "cm")
 
 ############################################################################################################################################################
 ############################################################################################################################################################
@@ -119,7 +119,7 @@ pr4
 #
 ### Save plot
 #
-ggsave(filename = "semilla externa y humedad media.png", width = 8, height = 14, dpi = 300, units = "cm")
+ggsave(filename = "external seed_and_medium humidity.png", width = 8, height = 14, dpi = 300, units = "cm")
 
 ############################################################################################################################################
 
@@ -278,7 +278,7 @@ pnmds1
 #
 ### Save plot
 #
-ggsave(filename = "semilla local y regiones1y2NMDS.png", width = 13, height = 13, dpi = 300, units = "cm")
+ggsave(filename = "local seed_and_regions 1 and 2_NMDS.png", width = 13, height = 13, dpi = 300, units = "cm")
 
 #
 ### Tests
@@ -328,7 +328,7 @@ pnmds2
 #
 ### Save plot
 #
-ggsave(filename = "semilla externa y regiones1y2NMDS.png", width = 13, height = 13, dpi = 300, units = "cm")
+ggsave(filename = "external seed_and_regions 1 and 2_NMDS.png", width = 13, height = 13, dpi = 300, units = "cm")
 
 #
 ### Tests
