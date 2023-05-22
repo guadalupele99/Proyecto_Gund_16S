@@ -289,10 +289,55 @@ ggsave(filename = "semilla local y regiones1y2NMDS.png", width = 13, height = 13
 ### PERMANOVA: Adonis
 sampledf <- data.frame(sample_data(phyloseq_rel.abundance_soil_local seed_beta)) ### Transform the sample information into a dataframe 
 
-###  Test with the variable of maize type 
-adonis2( nmds ~ farmer_type, data = sampledf) 
+###  Test 
+adonis2(nmds ~ farmer_type, data = sampledf) 
 
 #################################################################################################################################################
 #################################################################################################################################################
 
+#
+### External maize seed - NMDS
+#
 
+### Table for diversity measures and sample data
+beta.diversity2 <-estimate_richness(phyloseq_rel.abundance_soil_external seed, measures=("Shannon"))
+
+### Verify what is there 
+otu_table(phyloseq_rel.abundance_soil_external seed)
+any(taxa_sums(phyloseq_rel.abundance_soil_external seed) == 0)
+phyloseq_rel.abundance_soil_external seed_beta2<- prune_taxa(taxa_sums(phyloseq_rel.abundance_soil_external seed) > 0, phyloseq_rel.abundance_soil_external seed)
+phyloseq_rel.abundance_soil_external seed_beta2
+sample_data(phyloseq_rel.abundance_soil_external seed_beta2)
+
+### NMDS Analysis
+nmds = distance(phyloseq_rel.abundance_soil_external seed_beta2, method = "bray")
+nmds
+ordination = ordinate(phyloseq_rel.abundance_soil_external seed_beta2, method = "NMDS", distance = nmds)
+ordination
+scores(ordination)
+
+### Plot NMDS 
+pnmds2 <- plot_ordination(phyloseq_rel.abundance_soil_external seed_beta2, ordination, color="farmer_type", shape = "farmer_type") + theme(aspect.ratio=1)+geom_point(size=3)+
+  stat_ellipse(geom ="polygon", fill= NA, type="norm", alpha=0.4,aes(fill=farmer_type)) +
+  labs(color = "Regiones", shape = "Regiones") +
+  scale_color_discrete(labels=c("Tzotzil" = "R1.Humedad baja","Mestizo" = "R2.Humedad media")) +
+  scale_shape_discrete(labels=c("Tzotzil" = "R1.Humedad baja","Mestizo" = "R2.Humedad media")) +
+  theme(legend.position = "right")
+pnmds2
+
+#
+### Save plot
+#
+ggsave(filename = "semilla externa y regiones1y2NMDS.png", width = 13, height = 13, dpi = 300, units = "cm")
+
+#
+### Tests
+#
+
+### Statistical tests about the community 
+
+### PERMANOVA: Adonis
+sampledf1<- data.frame(sample_data(phyloseq_rel.abundance_soil_external seed_beta2)) ### Transform the sample information into a dataframe 
+
+###  Test 
+adonis2(nmds ~ farmer_type, data = sampledf1)
