@@ -27,19 +27,19 @@ phyloseq_rel.abundance_soil_local seed_low humidity
 ###  Relative abundance table with OTU of bacterial communities associated with the local seed in low humidity
 #
 
-OTU3 = as(otu_table(phyloseq_rel.abundance_soil_local seed_low humidity), "matrix")
-OTUdf = as.data.frame(OTU3)
+OTU7 = as(otu_table(phyloseq_rel.abundance_soil_local seed_low humidity), "matrix")
+OTUdf = as.data.frame(OTU7)
 
-write.csv(OTU3, file = "relative_abundance_soil_local seed_low humidity.csv")
+write.csv(OTU7, file = "relative_abundance_soil_local seed_low humidity.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with the local seed in low humidity
 #
 
-OTU4 = as(tax_table(phyloseq_rel.abundance_soil_local seed_low humidity), "matrix")
-OTUdf = as.data.frame(OTU4)
+OTU8 = as(tax_table(phyloseq_rel.abundance_soil_local seed_low humidity), "matrix")
+OTUdf = as.data.frame(OTU8)
 
-write.csv(OTU4, file = "tax_soil_local seed_low humidity.csv")
+write.csv(OTU8, file = "tax_soil_local seed_low humidity.csv")
 
 ###################################################################################################################################################################
 ###################################################################################################################################################################
@@ -69,16 +69,16 @@ phyloseq_rel.abundance_soil_local seed_medium humidity
 ###  Relative abundance table with OTU of bacterial communities associated with the local seed in medium humidity
 #
 
-OTU5 = as(otu_table(phyloseq_rel.abundance_soil_local seed_medium humidity), "matrix")
-OTUdf = as.data.frame(OTU5)
+OTU9 = as(otu_table(phyloseq_rel.abundance_soil_local seed_medium humidity), "matrix")
+OTUdf = as.data.frame(OTU9)
 
-write.csv(OTU5, file = "relative_abundance_soil_local seed_medium humidity.csv")
+write.csv(OTU9, file = "relative_abundance_soil_local seed_medium humidity.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with the local seed in medium humidity
 #
 
-OTU6 = as(tax_table(phyloseq_rel.abundance_soil_local seed_medium humidity), "matrix")
-OTUdf = as.data.frame(OTU6)
+OTU10 = as(tax_table(phyloseq_rel.abundance_soil_local seed_medium humidity), "matrix")
+OTUdf = as.data.frame(OTU10)
 
-write.csv(OTU6, file = "tax_soil_local seed_medium humidity.csv")
+write.csv(OTU10, file = "tax_soil_local seed_medium humidity.csv")
