@@ -27,19 +27,19 @@ phyloseq_rel.abundance_soil_external seed_low humidity
 ###  Relative abundance table with OTU of bacterial communities associated with the external seed in low humidity
 #
 
-OTU7 = as(otu_table(phyloseq_rel.abundance_soil_external seed_low humidity), "matrix")
-OTUdf = as.data.frame(OTU7)
+OTU11 = as(otu_table(phyloseq_rel.abundance_soil_external seed_low humidity), "matrix")
+OTUdf = as.data.frame(OTU11)
 
-write.csv(OTU7, file = "relative_abundance_soil_external seed_low humidity.csv")
+write.csv(OTU11, file = "relative_abundance_soil_external seed_low humidity.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with the external seed in low humidity
 #
 
-OTU8 = as(tax_table(phyloseq_rel.abundance_soil_external seed_low humidity), "matrix")
-OTUdf = as.data.frame(OTU8)
+OTU12 = as(tax_table(phyloseq_rel.abundance_soil_external seed_low humidity), "matrix")
+OTUdf = as.data.frame(OTU12)
 
-write.csv(OTU8, file = "tax_soil_external seed_low humidity.csv")
+write.csv(OTU12, file = "tax_soil_external seed_low humidity.csv")
 
 ######################################################################################################################################################################
 ######################################################################################################################################################################
@@ -69,16 +69,16 @@ phyloseq_rel.abundance_soil_external seed_medium humidity
 ###  Relative abundance table with OTU of bacterial communities associated with the external seed in medium humidity
 #
 
-OTU9 = as(otu_table(phyloseq_rel.abundance_soil_external seed_medium humidity), "matrix")
-OTUdf = as.data.frame(OTU9)
+OTU13 = as(otu_table(phyloseq_rel.abundance_soil_external seed_medium humidity), "matrix")
+OTUdf = as.data.frame(OTU13)
 
-write.csv(OTU9, file = "relative_abundance_soil_external seed_medium humidity.csv")
+write.csv(OTU13, file = "relative_abundance_soil_external seed_medium humidity.csv")
 
 #
 ### Relative abundance table with taxa of bacterial communities associated with the external seed in medium humidity
 #
 
-OTU10 = as(tax_table(phyloseq_rel.abundance_soil_external seed_medium humidity), "matrix")
-OTUdf = as.data.frame(OTU10)
+OTU14 = as(tax_table(phyloseq_rel.abundance_soil_external seed_medium humidity), "matrix")
+OTUdf = as.data.frame(OTU14)
 
-write.csv(OTU10, file = "tax_soil_external seed_medium humidity.csv")
+write.csv(OTU14, file = "tax_soil_external seed_medium humidity.csv")
