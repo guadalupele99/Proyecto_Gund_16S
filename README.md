@@ -1,4 +1,4 @@
-## Proyecto-Gund: Bacterial communities of the rhizosphere in two maize seed systems (local seed and external seed) with different humidity in the municipality of Ocozocoautla de Espinosa, Chiapas
+## Proyecto-Gund: Bacterial communities of the rhizosphere in two maize seed systems (local and external seed) with different humidity in the municipality of Ocozocoautla de Espinosa, Chiapas
 
 Metabarcoding. Bacterial communities associated with two types of corn seeds in two regions with different humidity.
 
